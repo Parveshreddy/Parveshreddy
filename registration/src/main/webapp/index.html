@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Your Page Title</title>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+        }
+        ol li:hover {
+            background-color: lightblue;
+        }
+        div.relative {
+            position: relative;
+            margin-top: 70px;
+        }
+
+        div.bring {
+	     position: absolute;
+	    top: -50px;
+	    left: 0;
+	    width: 100%; /* Adjusted to 100% for responsiveness */
+	    height: 70px;
+	    text-align: center;
+	    padding: 1rem !important; /* Adjusted padding */
+	    clip-path: polygon(0 0, 90% 0, 95% 0%, 100% 100%, 0 100%);
+	    background-color: #66BD55;
+	    font-size: 2em !important; /* Adjusted font size */
+	    color: white;
+	}
+
+		@media (max-width: 768px) {
+		    /* Adjust styles for smaller screens if needed */
+		    div.bring {
+		        font-size: 1.5em;
+		}
+}
+ 
+        .cons {
+            height: 100px;
+        }
+        .navbar-text {
+            font-size: small;
+            line-height: 1;
+        }
+        .space {
+            margin-left: 10px;
+        }
+        .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    }
+     .og{
+        margin-top: 65px;
+     }
+     .right-edge{
+        float:right;
+     }
+     .links{
+        background-color: rgb(221, 221, 221);
+        text-align: center;
+        padding-top: 2%;
+       
+        box-sizing: border-box;
+       }
+     .pp{
+        color: green;
+     }
+     .imglinks{
+        width: 40px;
+        margin-right: 10px;
+        background-color: red;
+       
+     }
+     footer {
+        background-color: #333;
+        color: #fff;
+        padding: 50px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* Style for links within the footer */
+    footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="AITS-Rajampet-logo.png" alt="" class="rounded-circle">
+        </a>
+        <div class="navbar-text">
+            <span> Annnamacharya<br>Institute of Technology & Sciences<br>Autonomous / Rajampet<br>Estd. 1998<br>ISO 9001:2015</span>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" data-toggle="dropdown">
+                        About Us
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Mechanical</a>
+                        <a class="dropdown-item" href="#">Civil</a>
+                        <a class="dropdown-item" href="#">EEE</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" data-toggle="dropdown">
+                        Academics
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Mechanical</a>
+                        <a class="dropdown-item" href="#">Civil</a>
+                        <a class="dropdown-item" href="#">EEE</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="departmentDropdown" data-toggle="dropdown">
+                        Department
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Mechanical</a>
+                        <a class="dropdown-item" href="#">Civil</a>
+                        <a class="dropdown-item" href="#">EEE</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="othersDropdown" data-toggle="dropdown">
+                        Others
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Mechanical</a>
+                        <a class="dropdown-item" href="#">Civil</a>
+                        <a class="dropdown-item" href="#">EEE</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" data-toggle="dropdown">
+                        Gallery
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Mechanical</a>
+                        <a class="dropdown-item" href="#">Civil</a>
+                        <a class="dropdown-item" href="#">EEE</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">ContactUs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Registration.html" class="nav-link">Registration</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Carousel content goes here -->
+         <!-- Indicators -->
+         <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+          </ul>
+          
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="banner1.jpg" alt="Los Angeles" class="d-block w-100 img-fluid">
+            </div>
+            <div class="carousel-item">
+              <img src="banner2.jpg" alt="Chicago" class="d-block w-100  img-fluid">
+            </div>
+            <div class="carousel-item">
+              <img src="Banner-6.jpg" alt="New York"class="d-block w-100  img-fluid">
+            </div>
+          <div class="carousel-item">
+            <img src="AUTONOMOUS.jpg" alt="New York"class="d-block w-100  img-fluid">
+          </div>
+        </div>
+          
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+      </div>
+    </div>
+    
+   <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-lg-2 bg-primary">
+           <i class="fa fa-newspaper-o"></i> <h4>latest news</h4>
+        </div>
+        <div class="col-md-7 col-lg-10  text-center "style="background-color:lightblue">
+            <P> cgr talent</P>
+        </div>
+       
+     </div>
+    </div>
+    <a href="#"><p style="margin: 1%;" ><b style="color: red;">New: APPLICATION FOR B.TECH. CATEGORY-B NRI QUOTA SEATS 2023-24</b></p></a>
+    <div class="container-fluid og" style="background-color: #2D3E50">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 "> <!-- Adjust the column sizes for responsiveness -->
+                <div class="text-content">
+                    <pre style="color: white;">
+
+Annamacharya Institute of Technology & Sciences, Rajampet is an AUTONOMOUS institution and is affiliated to JNTU,
+Anantapur. The institute was started in the year 1998 under the auspices of Annamacharya Educational Trust in picturesque
+surrounding on a spacious 30-acre campus near Tallapaka, the birthplace of Annamacharya, the renowned saint poet.
+                    </pre>
+                    <pre style="color: white;">The Institute is well located on Hyderabad – Chennai Highway.</pre>
+                    <pre style="color: white;">
+Sri. C. Gangi Reddy garu, Hon’ Secretary of Annamacharya Educational Trust. He was born in the year 1954 to
+Choppa Narayana Reddy and Choppa Rajamma, a farmer's family in Siddulapally, very close to Thallapaka, the birthplace of saint
+poet Annamacharya.
+                    </pre>
+                    <div class="bring"><b>Welcome to AITS Rajampet AUTONOMOUS</b></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-end justify-content-end"> <!-- Adjust the column sizes for responsiveness -->
+                <img src="gangi-reddy.jpg" alt="gangi-reddy" class="img-fluid right-edge">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid links">
+        <div class="row">
+            <div class="col-md-4">
+             <p><a href="#" class="pp"><img src="clock image.jpg" alt="clock" class="rounded-circle imglinks"><b>student Verification details</b></a></p>
+            </div>
+            <div class="col-md-4">
+                <p><a href="#"  class="pp" ><img src="clock image.jpg" alt="clock" class="rounded-circle imglinks"><b>mandatory disclosure</b></a></p>
+            </div>
+            <div class="col-md-4">
+                <p><a href="#"  class="pp"><img src="radio.jpg" alt="clock" class=" rounded-circle imglinks"><b>Annamacharya Radio</b></a></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Your Website Name.All rights reserved</p>
+      </footer> 
+</body>
+</html>

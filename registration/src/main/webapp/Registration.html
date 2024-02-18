@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+     
+    </style>
+    
+    <script>
+        function dispfname() {
+            document.getElementById('mymsg').innerHTML = "Enter only characters";
+        }
+
+        function validateFirstName() {
+            var firstName = document.getElementById('firstname').value;
+            if (firstName === "") {
+                document.getElementById('mymsg').innerHTML = "Enter first name";
+                document.getElementById('mymsg').style.color = "red";
+                return false;
+            } else {
+                document.getElementById('mymsg').innerHTML = "";
+                return true;
+            }
+        }
+
+        function displname() {
+            document.getElementById('mylastname').innerHTML = "Enter only characters";
+        }
+
+        function validateLastName() {
+            var lastName = document.getElementById('lastname').value;
+
+            if (lastName === "") {
+                document.getElementById('mylastname').innerHTML = "Enter last name";
+                document.getElementById('mylastname').style.color = "red";
+                return false;
+            } else {
+                document.getElementById('mylastname').innerHTML = "";
+                return true;
+            }
+        }
+
+        function dispphoneNumber() {
+            document.getElementById('myphoneNumber').innerHTML = "Enter only numbers";
+        }
+
+        function validatePhoneNumber() {
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            if (phoneNumber === "") {
+                document.getElementById('myphoneNumber').innerHTML = "Enter phone number";
+                document.getElementById('myphoneNumber').style.color = "red";
+                return false;
+            } else {
+                document.getElementById('myphoneNumber').innerHTML = "";
+                return true;
+            }
+        }
+
+        function dispemail() {
+            document.getElementById('myemail').innerHTML = "Enter a valid email";
+        }
+
+        function validateEmail() {
+            var email = document.getElementById('Email').value;
+            var emailPattern = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+
+            if (!emailPattern.test(email)) {
+                document.getElementById('myemail').innerHTML = "Enter a valid email";
+                document.getElementById('myemail').style.color = "red";
+                return false;
+            } else {
+                document.getElementById('myemail').innerHTML = "";
+                return true;
+            }
+        }
+
+        function dispUserName() {
+            document.getElementById('myuserName').innerHTML = "Enter only characters";
+        }
+
+        function validateUserName() {
+            var userName = document.getElementById('userName').value;
+            if (userName === "") {
+                document.getElementById('myuserName').innerHTML = "Enter a username";
+                document.getElementById('myuserName').style.color = "red";
+                return false;
+            } else {
+                document.getElementById('myuserName').innerHTML = "";
+                return true;
+            }
+        }
+
+        function disppassword() {
+            document.getElementById('mypassword').innerHTML = "Enter the password";
+        }
+
+        function validatePassword() {
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmpassword').value;
+    var passwordWarning = document.getElementById('mypassword');
+
+    if (password.trim() === "") {
+        passwordWarning.textContent = "Please enter a password";
+        passwordWarning.style.color = "red";
+        return false;
+    } else if (password !== confirmPassword) {
+        passwordWarning.textContent = "Passwords don't match";
+        passwordWarning.style.color = "red";
+        return false;
+    } else if (password.length < 8) {
+        passwordWarning.textContent = "Password must be at least 8 characters";
+        passwordWarning.style.color = "red";
+        return false;
+    } else {
+        passwordWarning.textContent = "";
+        return true;
+    }
+}
+
+
+        function disp() {
+            var isValid = true;
+            isValid = validateUserName() && isValid;
+            isValid = validateFirstName() && isValid;
+            isValid = validateLastName() && isValid;
+            isValid = validatePassword() && isValid;
+            isValid = validatePhoneNumber() && isValid;
+            isValid = validateEmail() && isValid;
+
+            if (isValid) {
+                // If all validations pass, navigate to the login page
+                window.location.href = "login.html";
+            }
+
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form class="myform" action="jai" class="form-group" method="post" onsubmit="return disp()">
+                    <div class="card card-with-background">
+                        <div class="card-header" style="text-align: center; background-color: lightblue;">
+                            <h1>Registration</h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="address">userName:</label>
+                                        <input type="text" id="userName" name="userName" placeholder="userName" class="form-control"  onfocus="dispUserName()" onblur="return validateUserName()">
+                                       
+                                        <p id="myuserName"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="firstname">First Name:</label>
+                                        <input type="text" name="firstname" id="firstname" placeholder="First Name" class="form-control" onfocus="dispfname()" onblur="return validateFirstName()">
+                                        <p id="mymsg"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="lastname">Last Name:</label>
+                                        <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="form-control" onfocus="displname()" onblur="return validateLastName()">
+                                        <span id="lastname-warning" class="text-danger"></span>
+                                        <p id="mylastname"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number:</label>
+                                        <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" class="form-control" onfocus="dispphoneNumber()" onblur="return validatePhoneNumber()" maxlength="10">
+                                        <p id="myphoneNumber"></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                   
+                                    <div class="form-group">
+                                        <label for="Email">Email:</label>
+                                        <input type="email" name="Email" id="Email" placeholder="abc@gmail.com" class="form-control"onfocus="dispemail()" onblur="return validateEmail()">
+                                        <p id="myemail"></p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" onfocus="disppassword()" onblur="return validatePassword()">
+                                       
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="confirmpassword">Confirm Password:</label>
+                                        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" onfocus="disppassword()" onblur="return validatePassword()">
+                                        <p id="mypassword"></p>
+                                    </div>
+                                    <br>
+                                   
+
+                                    <div class="form-group text-right">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script type="text/javascript">
+                 
+                  document.getElementById("userName"). addEventListener("keypress", fun0);
+                
+                function fun0(event){
+                  var ch = event.which;
+                
+                if ( !((ch >=65 && ch <=90) || (ch >=97 && ch <=122) || (ch == 32) || (ch == 8) || (ch == 0))){
+                   event.preventDefault(); //cancel the currently pressed character
+                   }
+                 }
+            
+
+                document.getElementById("firstname"). addEventListener("keypress", fun1);
+                
+                function fun1(event){
+                  var ch = event.which;
+                
+                if ( !((ch >=65 && ch <=90) || (ch >=97 && ch <=122) || (ch == 32) || (ch == 8) || (ch == 0))){
+                   event.preventDefault(); //cancel the currently pressed character
+                   }
+                 }
+            
+                document.getElementById("lastname"). addEventListener("keypress", fun2);
+                function fun2(event)
+                {
+                var ch = event.which;
+                if ( !((ch >=65 && ch <=90) || (ch >=97 && ch <=122) || (ch == 32) || (ch == 8) || (ch == 0)))
+                { 
+                event.preventDefault(); //cancel the currently pressed character
+                }
+                }
+            
+                document.getElementById("phoneNumber"). addEventListener("keypress", fun3);
+                    function fun3(event)
+                    {
+                    var ch = event.which;
+            
+                    if ( !((ch >=48 && ch <=57) || (ch == 8) || (ch == 0)))
+                    {
+                    event.preventDefault(); //cancel the currently pressed character
+                    }  
+                   }
+            
+                  
+                </script>  
+        </div>
+    </div>
+</body>
+</html>
